@@ -1,13 +1,37 @@
 <div class="flex justify-center slider-container">
   <div class="rounded-lg shadow-lg bg-white max-w-sm slider">
-    <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-      <img class="rounded-t-lg slider-slika" src="{{currentUser.img}}" alt=""/>
-    </a>
-    <div class="">
-      <h5 class="text-gray-900 text-xl font-medium mb-2">{{currentUser.userName}}</h5>
-      <p class="text-gray-700 text-base mb-4">
-        {{currentUser.info}}
-      </p>
+    <div class="slider-scrollable">
+      <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
+        <img class="rounded-t-lg slider-slika" src="{{currentUser.img}}" alt=""/>
+      </a>
+      <div class="slider-ime">
+        <h5 class="text-gray-900 text-xl font-medium mb-2">{{currentUser.userName}}</h5>
+      </div>
+      <hr>
+      <div class="slider-info">
+        <p class="text-gray-700 text-base mb-4">
+          {{currentUser.info}}
+        </p>
+      </div>
+      <hr>
+      <div class="slider-tech">
+        <h5 class="text-gray-900 text-xl font-medium mb-2">Tehnologije</h5>
+        <div class="tech-lista">
+          <!-- <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p> -->
+          <div class="tech-lista-item">mrsmbre</div>
+          <div class="tech-lista-item">mrsmbre soifj</div>
+          <div class="tech-lista-item">mrsmbre</div>
+          <div class="tech-lista-item">mrsmbre 2 </div>
+          <div class="tech-lista-item">mrsmbre</div>
+          <div class="tech-lista-item">mrsmbre</div>
+        </div>
+      </div>
+      <br>
+
+
+    </div>
+    
+    <div class="dugmad-slider">
       <button type="button" class="tinder-dugme" (click)="connect()">Connect</button>
       <button type="button" class="tinder-dugme" (click)="next()">Next</button>
     </div>
