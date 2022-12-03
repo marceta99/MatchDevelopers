@@ -1,20 +1,21 @@
 <main>
 
-<form #f="ngForm" class="max-w-md p-8 sm:flex sm:space-x-6 dark:bg-gray-900 dark:text-gray-100">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="max-w-md p-8 sm:flex sm:space-x-6 dark:bg-gray-900 dark:text-gray-100">
 	<div class="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
 		<img src="{{ profile.img }}" alt="img" class="object-cover object-center w-full h-full rounded dark:bg-gray-500"><span class="flex items-center space-x-2">
-				<span class="dark:text-gray-400">{{ profile.username }}</span>
+				<span *ngIf="!isEditing" class="dark:text-gray-400">{{ profile.username }}</span>
 			</span>
 	</div>
 	<div class="flex flex-col space-y-4">
 		<div>
-            <svg class="edit" width="582" height="745" viewBox="0 0 582 745" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg *ngIf="!isEditing" (click)="isEditing = true" class="edit" width="582" height="745" viewBox="0 0 582 745" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M537.633 22.4738C523.06 12.6187 508.731 5.8834 494.38 0.0845337L478.973 21.2877L566.577 84.9469L581.984 63.7437C566.943 45.2483 552.206 32.3285 537.633 22.4738V22.4738ZM469.059 34.9292L453.651 56.1324L541.256 119.792L556.663 98.5884L469.059 34.9292ZM442.426 71.5821L234.487 357.735L282.107 373.205L482.86 100.871L442.426 71.5821ZM491.412 107.727L291.763 379.509L318.781 421.946L530.031 135.241L491.412 107.727ZM229.156 369.996L206.562 484.272L306.416 429.198L278.067 386.913L229.156 369.996Z" fill="black"/>
 <path d="M87.3033 36.5093C38.9906 36.5093 -0.0419922 75.543 -0.0419922 123.854V658.048C-0.0419922 706.361 38.9918 745.019 87.3033 745.019H444.184C492.497 745.019 531.53 706.361 531.53 658.048V240.06L478.297 312.036V637.799C478.297 667.565 454.456 691.781 424.69 691.781H106.796C77.03 691.781 53.1879 667.565 53.1879 637.799V143.708C53.1879 113.942 77.0288 90.1003 106.796 90.1003H360.235L394.326 36.4925L87.3033 36.5093Z" fill="black"/>
 </svg>
-			<h2 class="text-2xl font-semibold">{{ profile.name }}</h2> <input type="text" value="{{profile.name}}">
-            <h2 class="text-2xl font-semibold">{{ profile.surname }}</h2>
-            <input type="text" value="{{profile.surname}}">
+			<h2 *ngIf="!isEditing" class="text-2xl font-semibold">{{ profile.name }}</h2> 
+            <input *ngIf="isEditing" type="text" value="{{profile.name}}">
+            <h2 *ngIf="!isEditing" class="text-2xl font-semibold">{{ profile.surname }}</h2>
+            <input *ngIf="isEditing" type="text" value="{{profile.surname}}">
            
 			
 			
@@ -22,9 +23,9 @@
 		<div class="space-y-1">
 			
 			<h2 class="text-sm dark:text-gray-400">{{ profile.info }}</h2>
-            <textarea type="text" value="{{profile.info}}"></textarea>
-
+            <textarea *ngIf="isEditing" type="text" value="{{profile.info}}"></textarea>
 		</div>
+        <button type="submit">Save Changes</button>
 	</div>
 </form>
 

@@ -11,6 +11,8 @@ import { MatchessComponent } from './matchess/matchess.component';
 import { MyProfComponent } from './my-prof/my-prof.component';
 import { SlidesComponent } from './slides/slides.component';
 import { LikesComponent } from './likes/likes.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { LikesComponent } from './likes/likes.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],
