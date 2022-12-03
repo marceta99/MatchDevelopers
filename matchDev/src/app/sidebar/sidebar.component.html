@@ -113,6 +113,8 @@
 		</a>
 	</div>
 	<!-- Component End  -->
-	<router-outlet></router-outlet>
+	<div class="content" [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''">
+      <router-outlet #o="outlet"></router-outlet>
+  </div>
 
 </div>
