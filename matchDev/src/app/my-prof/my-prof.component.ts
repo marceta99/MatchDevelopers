@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProfileService } from '../profile.service';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -21,8 +22,18 @@ export class MyProfComponent {
     info: "kur mur",
     tech: [1,2]
   }
-  onSubmit(f:any){
+  onSubmit(form : NgForm){
     this.isEditing = false;
-    this.profileService.editUserInfo(this.profile).subscribe()
+    const user = {
+          id: this.profile.id,
+          username: this.profile.username,
+          name: form.controls['name'].value,
+          surname: form.controls['surname'].value,
+          img: "https://www.stockvault.net/data/2009/06/09/109080/preview16.jpg",
+          info: form.controls['info'].value,
+          tech: [1,2]
+    }
+    console.log(user)
+    this.profileService.editUserInfo(user).subscribe()
   }
 }

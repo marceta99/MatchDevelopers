@@ -1,1 +1,49 @@
-<p>matchess works!</p>
+<div class="container">
+  <div *ngFor="let match of matches" class="profile-card" >
+    <div class="image">
+      <img src="{{match.img}}" alt="" class="profile-img" />
+    </div>
+
+    <div class="text-data">
+      <span class="name">{{match.userName}}</span>
+      <span class="job">{{match.name + " "+ match.surename}}</span>
+    </div>
+
+    <div class="media-buttons">
+      <a href="#" style="background: #4267b2" class="link">
+        <i class="bx bxl-facebook"></i>
+      </a>
+      <a href="#" style="background: #1da1f2" class="link">
+        <i class="bx bxl-twitter"></i>
+      </a>
+      <a href="#" style="background: #e1306c" class="link">
+        <i class="bx bxl-instagram"></i>
+      </a>
+      <a href="#" style="background: #ff0000" class="link">
+        <i class="bx bxl-youtube"></i>
+      </a>
+    </div>
+
+    <div class="buttons">
+      <button class="button">Unconnect</button>
+      <button class="button">Message</button>
+    </div>
+
+    <div class="analytics">
+      <div class="data">
+        <i class="bx bx-heart"></i>
+        <span class="number">60k</span>
+      </div>
+      <div class="data">
+        <i class="bx bx-message-rounded"></i>
+        <span class="number">20k</span>
+      </div>
+      <div class="data">
+        <i class="bx bx-share"></i>
+        <span class="number">12k</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
