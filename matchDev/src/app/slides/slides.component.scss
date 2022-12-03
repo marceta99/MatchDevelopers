@@ -4,6 +4,7 @@
 }
 .slider {
   width: 700px;
+  border-radius: 20px;
 
   .dugmad-slider {
     position: absolute;
@@ -19,7 +20,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   scrollbar-width: 0px;
-  z-index: 5;
+  border-radius: 20px;
   max-height: 600px;
   .slider-slika {
     width: 100%;
@@ -54,12 +55,29 @@
       margin-top: 6px;
     }
   }
-  .slider-marginforbuttons {
-    // height: 300px;
-    background-color: pink;
-    border: 2px solid red;
+  .linkovi-container {
+    padding: 15px;
+    .connect-text {
+      font-size: 20px;
+    }
+    .linkovi {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      .linkedin,
+      .github {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+      }
+    }
   }
 }
 .slider-scrollable::-webkit-scrollbar {
   display: none;
+}
+
+.tinder-button-image {
+  width: 100px;
+  height: 50px;
 }
