@@ -37,6 +37,10 @@
     height: 100%;
     width: 100%;
 }
+input {
+    border-radius: 5px;
+    padding: 0.2rem;
+}
 .login p {
     font-weight: 700;
     font-size: 35px;
@@ -52,11 +56,12 @@
             height: 1.7rem;
         }
         button {
-            max-width: 9rem;
+            max-width: 10rem;
             background-color: #3F51B5;
             color: white;
             padding: 0.5rem 2rem;
             border-radius: 5px;
+            border: none;
         }
         button.invalidButton{
             background-color: gray;
