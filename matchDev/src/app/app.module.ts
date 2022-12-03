@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { MatchessComponent } from './matchess/matchess.component';
 import { MyProfComponent } from './my-prof/my-prof.component';
 import { SlidesComponent } from './slides/slides.component';
+import { LikesComponent } from './likes/likes.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SlidesComponent } from './slides/slides.component';
     MatchessComponent,
     MyProfComponent,
     SlidesComponent,
+    LikesComponent,
     
   ],
   imports: [
