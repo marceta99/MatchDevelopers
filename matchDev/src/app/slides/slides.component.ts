@@ -13,7 +13,7 @@ export class SlidesComponent implements OnInit {
     name : "mihailo",
     surname: "marcetic",
     img: "https://picsum.photos/200",
-    info: "cele noci ja na splavu sa njom sam bio",
+    info: "Ne budite mene, mamuran sam ja od rakije ljute i od splavova ne budite mene, mamuran sam ja ni majka me jutros nije poznala",
     tech : [ 1, 2]
   },
   {

@@ -1,13 +1,65 @@
 .slider-container {
-  width: 1250px;
   height: 600px;
-  border: 2px solid red;
+  position: relative;
 }
 .slider {
   width: 700px;
-  border: 2px solid blue;
-  .slider-slika{
-    // display: none;
+
+  .dugmad-slider {
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    text-align: center;
+  }
+}
+.slider-scrollable {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: 0px;
+  z-index: 5;
+  max-height: 600px;
+  .slider-slika {
     width: 100%;
   }
+  .slider-ime,
+  .slider-info,
+  .slider-tech {
+    width: 400px;
+    // border: 2px solid red;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    padding-bottom: 5px;
+  }
+  .slider-tech {
+    flex-direction: column;
+    max-height: 200px;
+    padding: 20px;
+
+    .tech-lista {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .tech-lista-item {
+      border: 2px solid rgb(120, 120, 120);
+      border-radius: 12px;
+
+      padding: 6px;
+      margin-right: 6px;
+      margin-top: 6px;
+    }
+  }
+  .slider-marginforbuttons {
+    // height: 300px;
+    background-color: pink;
+    border: 2px solid red;
+  }
+}
+.slider-scrollable::-webkit-scrollbar {
+  display: none;
 }
