@@ -22,12 +22,18 @@
                     ngModel
                     name="surname"
                     type="text" placeholder="{{profile.surname}}">
-           
-			
-			
 		</div>
 		<div class="space-y-1">
-			
+			<select (change)="selectedOption(f)" id="countries"
+                    ngModel  name="state" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+                                <option value="1">JAVA</option>
+                                <option value="2">"JavaScript"</option>
+                                <option value="3">"Angular"</option>
+                                <option value="4">C#</option>
+                        </select>
+                        <h2 > Selected Skils : <ul *ngFor="selectOption of selectOptions">
+                                <li>{{ selectedOption }}</li>
+                        </ul></h2>
 			<h2 *ngIf="!isEditing" class="text-sm dark:text-gray-400">{{ profile.info }}</h2>
             <textarea *ngIf="isEditing" id="info"
                     ngModel
@@ -36,6 +42,7 @@
 		</div>
         <button *ngIf="isEditing" type="submit">Save Changes</button>
 	</div>
+        
 </form>
 
 

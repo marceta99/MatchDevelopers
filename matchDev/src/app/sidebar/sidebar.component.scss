@@ -9,3 +9,20 @@
 .active {
   background: rgb(46, 54, 68);
 }
+.content {
+  animation: FadeIn 1s ease-in-out;
+}
+ router-outlet~* {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+  
+}
