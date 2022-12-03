@@ -12,6 +12,7 @@ export class MyProfComponent {
 
   constructor( private profileService: ProfileService){}
   isEditing = false;
+  selectOptions : any = [];
 
   public profile = {
     id: 1,
@@ -35,5 +36,11 @@ export class MyProfComponent {
     }
     console.log(user)
     this.profileService.editUserInfo(user).subscribe()
+  }
+  selectedOption(form : NgForm){
+    const select = form.controls['state'].value
+    this.selectOptions.push(this.selectOptions)
+    console.log(select)
+    console.log(this.selectOptions)
   }
 }
