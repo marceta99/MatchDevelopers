@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   // }
   // loginTest(){
   //   this.loginService.login('test@gmail.com', '123456')
+  this.router.navigate(["/home"]);
   }
 
 }
