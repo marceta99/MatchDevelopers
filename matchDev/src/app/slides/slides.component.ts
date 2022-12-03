@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SlidesService } from '../slides.service';
 
 @Component({
   selector: 'app-slides',
@@ -14,7 +15,8 @@ export class SlidesComponent implements OnInit {
     surname: "marcetic",
     img: "https://picsum.photos/200",
     info: "Ne budite mene, mamuran sam ja od rakije ljute i od splavova ne budite mene, mamuran sam ja ni majka me jutros nije poznala",
-    tech : [ 1, 2]
+    tech : [ 1, 2],
+    linkedin :""
   },
   {
     id : 2,
@@ -23,7 +25,8 @@ export class SlidesComponent implements OnInit {
     surname: "roka",
     img: "https://picsum.photos/200",
     info: "djoka djoka djoka djoka djoka ",
-    tech : [ 1, 2]
+    tech : [ 1, 2],
+    linkedin :""
   },
   {
     id : 3,
@@ -32,13 +35,21 @@ export class SlidesComponent implements OnInit {
     surname: "jovanovic",
     img: "https://picsum.photos/200",
     info: "put do slave i bogatstva put do trona ",
-    tech : [ 1, 2]
+    tech : [ 1, 2],
+    linkedin :""
   },] ;
   usersCount = 0 ;
   currentUser! : any ;
 
+
+  constructor(private slidesService : SlidesService) {
+  }
+
   ngOnInit(): void {
     this.currentUser = this.users[0];
+    this.slidesService.getSlides().subscribe((res : any)=>{
+      console.log(res);
+    })
   }
 
   connect(){
