@@ -13,7 +13,6 @@ import { SlidesComponent } from './slides/slides.component';
 import { LikesComponent } from './likes/likes.component';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,13 +23,13 @@ import { HttpClientModule } from '@angular/common/http';
     MyProfComponent,
     SlidesComponent,
     LikesComponent,
-    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
