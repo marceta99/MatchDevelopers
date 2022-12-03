@@ -22,7 +22,7 @@ export class ProfileService {
   return throwError(() => new Error('Something bad happened; please try again later.'));
 }
 
-  public url = "http://192.168.28.68:5050/api/user/1"
+  public url = "http://192.168.28.68:5050/api/user/edit"
 
   constructor(private http: HttpClient) { }
 
