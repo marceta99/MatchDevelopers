@@ -1,0 +1,13 @@
+.slider-container {
+  width: 1250px;
+  height: 600px;
+  border: 2px solid red;
+}
+.slider {
+  width: 700px;
+  border: 2px solid blue;
+  .slider-slika{
+    // display: none;
+    width: 100%;
+  }
+}
