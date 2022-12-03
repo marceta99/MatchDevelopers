@@ -1,1 +1,21 @@
-<p>likes works!</p>
+<div class="container" >
+  <div class="box" *ngFor="let like of likes ">
+  <div class="image">
+     <img src="{{like.img}}">
+    </div>
+    <div class="name_job">{{like.userName}}</div>
+    <div class="rating">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+    </div>
+    <p>{{like.info}}</p>
+    <div class="btns">
+      <button>Like</button>
+      <button>Inspect</button>
+    </div>
+  </div>
+
+</div>
