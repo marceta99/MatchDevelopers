@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../profile.service';
 import { NgForm } from '@angular/forms';
+import { SlidesService } from '../slides.service';
 
 
 @Component({
@@ -8,19 +9,25 @@ import { NgForm } from '@angular/forms';
   templateUrl: './my-prof.component.html',
   styleUrls: ['./my-prof.component.scss']
 })
-export class MyProfComponent {
+export class MyProfComponent implements OnInit {
 
-  constructor( private profileService: ProfileService){}
+  techList! : any[] ; 
+  constructor( private profileService: ProfileService, private slidesService:SlidesService){}
+  ngOnInit(): void {
+    this.techList = this.slidesService.techList ; 
+    console.log(this.techList);
+  }
   isEditing = false;
-  selectOptions : any = [];
+  selectOpt : any = [];
+  selected! : any ;
 
   public profile = {
     id: 1,
-    username: 'mladen.radovic',
+    username: 'mladen.radojevic',
     name: 'mladen',
-    surname: 'radovic',
+    surname: 'radojevic',
     img: "https://www.stockvault.net/data/2009/06/09/109080/preview16.jpg",
-    info: "kur mur",
+    info: "kur mur lerem sdasda sads adas",
     tech: [1,2]
   }
   onSubmit(form : NgForm){
@@ -39,8 +46,10 @@ export class MyProfComponent {
   }
   selectedOption(form : NgForm){
     const select = form.controls['state'].value
-    this.selectOptions.push(this.selectOptions)
+    this.selectOpt.push(select)
     console.log(select)
-    console.log(this.selectOptions)
+    console.log(form.controls['state'])
+    console.log(this.selectOpt)
+    
   }
 }
