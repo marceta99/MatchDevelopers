@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SlidesService } from '../slides.service';
 
 @Component({
   selector: 'app-login',
@@ -9,19 +10,17 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( private router: Router) { }
+  constructor( private router: Router, private slideService : SlidesService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(form : NgForm){
-  //   const email = form.controls["username"].value ;
-  //   const password = form.controls["password"].value ;
+    const username = form.controls["username"].value ;
+    const password = form.controls["password"].value ;
 
-  //   this.loginService.login(email, password)
-  // }
-  // loginTest(){
-  //   this.loginService.login('test@gmail.com', '123456')
+  this.slideService.login(username);
+
   this.router.navigate(["/home"]);
   }
 

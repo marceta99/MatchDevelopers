@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SlidesService } from '../slides.service';
 
 @Component({
   selector: 'app-matchess',
@@ -35,8 +36,15 @@ export class MatchessComponent implements OnInit {
     tech : [ 1, 2]
   },] ;
 
-  ngOnInit(): void {
 
+  constructor(private slidesService : SlidesService) {
+  }
+
+  ngOnInit(): void {
+     this.slidesService.getMatches().subscribe((res : any)=>{
+      this.matches = res ;
+      console.log(res) ;
+    })
   }
 
 }
