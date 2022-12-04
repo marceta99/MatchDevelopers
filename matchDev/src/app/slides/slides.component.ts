@@ -8,36 +8,7 @@ import { SlidesService } from '../slides.service';
 })
 export class SlidesComponent implements OnInit {
 
-  users: any[] = [{
-    id : 1,
-    userName: "marceta",
-    name : "mihailo",
-    surname: "marcetic",
-    img: "https://picsum.photos/200",
-    info: "Ne budite mene, mamuran sam ja od rakije ljute i od splavova ne budite mene, mamuran sam ja ni majka me jutros nije poznala",
-    tech : [ 1, 2],
-    linkedin :""
-  },
-  {
-    id : 2,
-    userName: "djoka",
-    name : "djoka",
-    surname: "roka",
-    img: "https://picsum.photos/200",
-    info: "djoka djoka djoka djoka djoka ",
-    tech : [ 1, 2],
-    linkedin :""
-  },
-  {
-    id : 3,
-    userName: "joca",
-    name : "jovan",
-    surname: "jovanovic",
-    img: "https://picsum.photos/200",
-    info: "put do slave i bogatstva put do trona ",
-    tech : [ {1 : "java"}, {2 : "c#"}],
-    linkedin :""
-  },] ;
+  users!: any[] ;
   usersCount = 0 ;
   currentUser! : any ;
   listtech! : any[] ;
@@ -46,11 +17,12 @@ export class SlidesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.currentUser = this.users[0];
+    this.currentUser = this.users?.length > 0 ? this.users[0] : null;
     this.slidesService.getSlides().subscribe((res : any)=>{
       console.log(res);
       this.users = res ;
       this.currentUser = this.users[0];
+      console.log(this.users);
     })
     this.listtech = this.slidesService.techList ;
   }
