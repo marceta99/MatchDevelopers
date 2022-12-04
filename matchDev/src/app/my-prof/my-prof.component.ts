@@ -11,11 +11,13 @@ import { SlidesService } from '../slides.service';
 })
 export class MyProfComponent implements OnInit {
 
-  techList! : any[] ; 
+  techList! : any ;
+  selectedList!: any;
   constructor( private profileService: ProfileService, private slidesService:SlidesService){}
-  ngOnInit(): void {
+  ngOnInit() {
     this.techList = this.slidesService.techList ; 
     console.log(this.techList);
+    console.log(this.slidesService.techList);
   }
   isEditing = false;
   selectOpt : any = [];
@@ -39,13 +41,13 @@ export class MyProfComponent implements OnInit {
           surname: form.controls['surname'].value,
           img: "https://www.stockvault.net/data/2009/06/09/109080/preview16.jpg",
           info: form.controls['info'].value,
-          tech: [1,2]
+          tech: this.selectOpt
     }
     console.log(user)
     this.profileService.editUserInfo(user).subscribe()
   }
   selectedOption(form : NgForm){
-    const select = form.controls['state'].value
+    const select = form.controls['state']
     this.selectOpt.push(select)
     console.log(select)
     console.log(form.controls['state'])
