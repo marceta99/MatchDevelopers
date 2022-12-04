@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   this.slideService.login(username);
 
-  this.router.navigate(["/home"]);
+  this.router.navigate(["/home/slides"]);
   }
 
 }
