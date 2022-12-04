@@ -29,7 +29,7 @@ export class MyProfComponent implements OnInit {
     name: 'mladen',
     surname: 'radojevic',
     img: "https://www.stockvault.net/data/2009/06/09/109080/preview16.jpg",
-    info: "kur mur lerem sdasda sads adas",
+    info: "opis o profilu",
     tech: [1,2]
   }
   onSubmit(form : NgForm){
