@@ -35,12 +35,12 @@ export class SlidesComponent implements OnInit {
     surname: "jovanovic",
     img: "https://picsum.photos/200",
     info: "put do slave i bogatstva put do trona ",
-    tech : [ 1, 2],
+    tech : [ {1 : "java"}, {2 : "c#"}],
     linkedin :""
   },] ;
   usersCount = 0 ;
   currentUser! : any ;
-
+  listtech! : any[] ;
 
   constructor(private slidesService : SlidesService) {
   }
@@ -49,10 +49,17 @@ export class SlidesComponent implements OnInit {
     this.currentUser = this.users[0];
     this.slidesService.getSlides().subscribe((res : any)=>{
       console.log(res);
+      this.users = res ;
+      this.currentUser = this.users[0];
+      console.log(this.currentUser.id);
     })
+    this.listtech = this.slidesService.techList ;
   }
 
   connect(){
+    console.log(this.currentUser.id);
+    this.slidesService.like(this.currentUser.id);
+
     this.usersCount++ ;
     this.currentUser = this.users[this.usersCount] ;
   }
