@@ -51,7 +51,6 @@ export class SlidesComponent implements OnInit {
       console.log(res);
       this.users = res ;
       this.currentUser = this.users[0];
-      console.log(this.currentUser.id);
     })
     this.listtech = this.slidesService.techList ;
   }
@@ -61,6 +60,11 @@ export class SlidesComponent implements OnInit {
     this.slidesService.like(this.currentUser.id);
 
     this.usersCount++ ;
+
+    if(this.usersCount >= this.users.length){
+      this.currentUser = null ;
+      return ;
+    }
     this.currentUser = this.users[this.usersCount] ;
   }
   next(){
