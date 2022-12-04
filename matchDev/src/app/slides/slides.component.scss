@@ -3,6 +3,7 @@
   position: relative;
   transform: scale(0.8);
 }
+
 .slider {
   width: 700px;
   border-radius: 20px;
@@ -94,4 +95,11 @@
     height: 50px;
     margin-top: 10px;
   }
+  main {
+  border: 5px solid;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 10px;
+}
 }
