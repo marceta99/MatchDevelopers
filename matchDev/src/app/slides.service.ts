@@ -46,4 +46,9 @@ export class SlidesService {
   getOnesThatLikedMe(){
     return this.http.get<any[]>("http://192.168.28.68:5050/api/likes/"+this.loggedUser.id)
   }
+
+  getFiltered(filterTechId : any){
+    return this.http
+    .get<any[]>("http://192.168.28.68:5050/api/filter/"+this.loggedUser.id+"?tech="+filterTechId);
+  }
 }

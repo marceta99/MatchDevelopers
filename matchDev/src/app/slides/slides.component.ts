@@ -12,7 +12,7 @@ export class SlidesComponent implements OnInit {
   usersCount = 0 ;
   currentUser! : any ;
   listtech! : any[] ;
-
+  searchText!: any;
   constructor(private slidesService : SlidesService) {
   }
 
@@ -43,4 +43,24 @@ export class SlidesComponent implements OnInit {
     this.usersCount++ ;
     this.currentUser = this.users[this.usersCount] ;
   }
+
+  submit(){
+    console.log(this.searchText);
+  }
+  change(event: any){
+    console.log(event.target.value);
+    this.searchText = event.target.value;
+
+    this.slidesService.techList.forEach(t => {
+
+      if(t.name == this.searchText){
+        this.slidesService.getFiltered(t.id).subscribe((res : any)=>{
+          this.users = res ;
+          this.currentUser = this.users[0];
+        })
+      }
+    })
+
+
+   }
 }
