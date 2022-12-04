@@ -12,6 +12,7 @@ import { MyProfComponent } from './my-prof/my-prof.component';
 import { SlidesComponent } from './slides/slides.component';
 import { LikesComponent } from './likes/likes.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CommunityComponent } from './community/community.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     MyProfComponent,
     SlidesComponent,
     LikesComponent,
+    CommunityComponent,
 
   ],
   imports: [

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CommunityComponent } from './community/community.component';
 import { HomeComponent } from './home/home.component';
 import { LikesComponent } from './likes/likes.component';
 import { LoginComponent } from './login/login.component';
@@ -14,7 +15,7 @@ const routes: Routes = [
     { path: 'matches', component : MatchessComponent},
     { path: 'profile', component : MyProfComponent},
     { path: 'likes', component : LikesComponent},
-
+    { path: 'community', component : CommunityComponent}
 
   ] },
   {path :'login' , component :  LoginComponent },
